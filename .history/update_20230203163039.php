@@ -22,12 +22,12 @@ if (isset($_POST['name'])) {
     // die();
 
     if (isset($result['status']) && isset($result['code'])  && $result['code'] == 10) {
-        header('location:home.php');
+        header('location:index.php');
         $_SESSION['success_mg'] = $result['data'];
         die();
     } else {
         echo $result['data'];
     }
 } else {
-    header('location:home.php');
+    header('location:index.php');
 }

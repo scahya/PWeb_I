@@ -1,10 +1,12 @@
 <?php
+
+
+
 session_start();
-$token = $_SESSION['token'];
 if (isset($_POST['name'])) {
-    $url = "https://scahya.000webhostapp.com/api/mahasiswa/update.php?token={$token}";
+    $token = $_SESSION['token'];
+    $url = "https://scahya.000webhostapp.com/api/mahasiswa/create.php?token={$token}";
     $ch = curl_init();
-    $arr['id'] = $_POST['id'];
     $arr['name'] = $_POST['name'];
     $arr['email'] = $_POST['email'];
     $arr['phone'] = $_POST['phone'];
@@ -20,14 +22,17 @@ if (isset($_POST['name'])) {
 
     // print_r($result);
     // die();
+    // echo '<script>console.log({$result}); </script>';
 
-    if (isset($result['status']) && isset($result['code'])  && $result['code'] == 10) {
-        header('location:home.php');
+    if (isset($result['status'])) {
         $_SESSION['success_mg'] = $result['data'];
+
+        header('location:home.php');
         die();
-    } else {
+    } 
+    else {
         echo $result['data'];
     }
 } else {
-    header('location:home.php');
+    header('location:index.php');
 }

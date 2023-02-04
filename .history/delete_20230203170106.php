@@ -25,5 +25,5 @@ if (isset($_GET['id']) && isset($_GET['id']) > 0) {
     echo $result['data'];
   }
 } else {
-  header('location:home.php');
+  header('location:index.php');
 }
