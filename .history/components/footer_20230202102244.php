@@ -5,7 +5,7 @@
 >
   <div style="width:100%" class="d-flex rounded-top  justify-content-center">
     <p class="text-center">
-    © Copyright by 20552011201_BagoesCahyaArdhana_TIF20K_UASWEB1
+      © Copyright by 20552011201_BagoesCahyaArdhana
     </p>
   </div>
 </footer>
